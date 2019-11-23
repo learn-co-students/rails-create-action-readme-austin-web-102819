@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post.description= params[:description]
     # Save the object to the database with these attributes
     @post.save
-    # Redirect the user to the /post/ #show path
+    # Redirect the user to the post_path, and have post_path accept this object as an argument.
     redirect_to post_path(@post)
 
   end
