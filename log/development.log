@@ -40,3 +40,68 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Why I majored in philosophy"], ["description", "A viral PolicyMic article"], ["created_at", "2019-11-25 01:10:56.625238"], ["updated_at", "2019-11-25 01:10:56.625238"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2019-11-24 20:18:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/gferowich/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gferowich/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (9.0ms)
+Completed 200 OK in 41ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-11-24 20:18:17 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 573ms (Views: 547.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-11-24 20:18:48 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gniv2sKTb8OOTsEhpOeOjrsbh15rWeA6RsUCxkgYE1kW9AZOVXu4n9dvsQGKNUM+iSdomqSbvZgJi1LIr6pfug==", "title"=>"Why I majored in Philosophy", "description"=>"Viral article on PolicyMic", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Why I majored in Philosophy"], ["description", "Viral article on PolicyMic"], ["created_at", "2019-11-25 01:18:48.080574"], ["updated_at", "2019-11-25 01:18:48.080574"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 4.2ms)
+
+
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-11-24 20:28:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/gferowich/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gferowich/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (7.8ms)
+Completed 200 OK in 71ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-11-24 20:28:56 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 317ms (Views: 289.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/posts" for ::1 at 2019-11-24 20:29:20 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmeXDKMRAUyZh7a9Mpgss2qkiRUXMSRUbsaRcfNbQpGi6z6YNPnWEMCmxp0cSuEDWJhm0djzefYhiMF/FOkOcg==", "title"=>"F-35 catches on fire", "description"=>"Bet you've NEVER heard about this happening before! ", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "F-35 catches on fire"], ["description", "Bet you've NEVER heard about this happening before! "], ["created_at", "2019-11-25 01:29:20.967690"], ["updated_at", "2019-11-25 01:29:20.967690"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 11ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/4" for ::1 at 2019-11-24 20:29:20 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
